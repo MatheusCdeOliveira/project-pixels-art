@@ -1,7 +1,7 @@
 function popularQuadro(size) {
   const pai = document.getElementById('pixel-board');
   for (let i = 0; i < size; i += 1) {
-    let quadros = document.createElement('div');
+    const quadros = document.createElement('div');
     quadros.classList.add('pixel');
     quadros.style.backgroundColor = 'white';
     pai.appendChild(quadros);
@@ -9,10 +9,21 @@ function popularQuadro(size) {
 }
 popularQuadro(25);
 
+function selecionarCor() {
+  let cores = document.getElementById('color-palette');
+  const select = document.getElementsByClassName('selected');
+  if (select.length <= 1) {
+    cores.addEventListener('click', function (event) {
+      select[0].classList.remove('selected');
+      event.target.classList.add('selected');
+    });
+  }
+}
+selecionarCor();
 
-window.onload = carregaPagina
+window.onload = carregaPagina;
 
 function carregaPagina() {
-    let corPreta = document.querySelector('.one')
-    corPreta.classList.add('selected')
+  const corPreta = document.querySelector('.one');
+  corPreta.classList.add('selected');
 }
