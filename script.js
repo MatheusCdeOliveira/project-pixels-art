@@ -8,3 +8,11 @@ function popularQuadro(size) {
   }
 }
 popularQuadro(25);
+
+
+window.onload = carregaPagina
+
+function carregaPagina() {
+    let corPreta = document.querySelector('.one')
+    corPreta.classList.add('selected')
+}
