@@ -1,5 +1,20 @@
+// Input
+const paiInput = document.querySelector('#buttonFather');
+const newInput = document.createElement('input');
+newInput.id = 'board-size';
+paiInput.appendChild(newInput);
+newInput.type = 'number';
+newInput.min = '1';
+// ------------------------------------------------
+// botão VQV
+const newButton = document.createElement('button');
+newButton.innerText = 'VQV';
+newButton.id = 'generate-board';
+paiInput.appendChild(newButton);
+
+const pai = document.getElementById('pixel-board');
+
 function popularQuadro(size) {
-  const pai = document.getElementById('pixel-board');
   for (let i = 0; i < size; i += 1) {
     const quadros = document.createElement('div');
     quadros.classList.add('pixel');
@@ -8,6 +23,26 @@ function popularQuadro(size) {
   }
 }
 popularQuadro(25);
+
+// ---------------------------------------------------
+newButton.addEventListener('click', populateByInput);
+const quadro = document.getElementsByClassName('pixel');
+
+function populateByInput() {
+  if (!newInput.value) {
+    alert('Board inválido!');
+  }
+  while (pai.children.length > 0) {
+    pai.lastChild.remove();
+  }
+  pai.style.width = newInput.value * 42 + 'px';
+  for (let i = 0; i < newInput.value * newInput.value; i += 1) {
+    const quadros = document.createElement('div');
+    quadros.classList.add('pixel');
+    quadros.style.backgroundColor = 'white';
+    pai.appendChild(quadros);
+  }
+}
 
 function selectColor() {
   const cores = document.getElementById('color-palette');
@@ -51,6 +86,7 @@ function limpaTudo() {
   });
 }
 limpaTudo();
+
 
 window.onload = carregaPagina;
 
