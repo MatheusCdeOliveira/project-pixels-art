@@ -25,8 +25,6 @@ function popularQuadro(size) {
 popularQuadro(25);
 
 // ---------------------------------------------------
-newButton.addEventListener('click', populateByInput);
-const quadro = document.getElementsByClassName('pixel');
 
 function populateByInput() {
   if (!newInput.value) {
@@ -43,6 +41,7 @@ function populateByInput() {
     pai.appendChild(quadros);
   }
 }
+newButton.addEventListener('click', populateByInput);
 
 function selectColor() {
   const cores = document.getElementById('color-palette');
@@ -78,7 +77,7 @@ function limpaTudo() {
   divPai.appendChild(btnClear);
 
   btnClear.addEventListener('click', function () {
-    for (let valor of pix) {
+    for (const valor of pix) {
       if (valor.style.backgroundColor !== 'white') {
         valor.style.backgroundColor = 'white';
       }
@@ -88,9 +87,8 @@ function limpaTudo() {
 limpaTudo();
 
 
-window.onload = carregaPagina;
-
 function carregaPagina() {
   const corPreta = document.querySelector('.one');
   corPreta.classList.add('selected');
 }
+window.onload = carregaPagina;

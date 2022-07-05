@@ -17,9 +17,9 @@
 }
 
 #clear-board {
- display: inline-block;
- margin-bottom: 30px;
- margin-top: 20px;
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 #board-size {
