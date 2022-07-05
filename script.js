@@ -9,9 +9,8 @@ function popularQuadro(size) {
 }
 popularQuadro(25);
 
-let corAtual;
 function selectColor() {
-  let cores = document.getElementById('color-palette');
+  const cores = document.getElementById('color-palette');
   const select = document.getElementsByClassName('selected');
   if (select.length <= 1) {
     cores.addEventListener('click', function (event) {
@@ -24,8 +23,6 @@ selectColor();
 
 const pixels = document.getElementById('pixel-board');
 const select = document.getElementsByClassName('selected');
-const color = document.querySelector('.one');
-let cor = color.style.backgroundColor;
 pixels.addEventListener('click', function (event) {
   if (
     select.length > 0 &&
