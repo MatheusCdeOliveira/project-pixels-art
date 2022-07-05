@@ -30,6 +30,11 @@ function populateByInput() {
   if (!newInput.value) {
     alert('Board inválido!');
   }
+  if (newInput.value < 5) {
+    newInput.value = 5;
+  } else if (newInput.value > 50) {
+    newInput.value = 50;
+  }
   while (pai.children.length > 0) {
     pai.lastChild.remove();
   }
@@ -85,7 +90,6 @@ function limpaTudo() {
   });
 }
 limpaTudo();
-
 
 function carregaPagina() {
   const corPreta = document.querySelector('.one');
