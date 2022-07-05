@@ -34,6 +34,24 @@ pixels.addEventListener('click', function (event) {
   }
 });
 
+function limpaTudo() {
+  const divPai = document.querySelector('#color-palette');
+  const pix = document.querySelectorAll('.pixel');
+  const btnClear = document.createElement('button');
+  btnClear.innerText = 'Limpar';
+  btnClear.id = 'clear-board';
+  divPai.appendChild(btnClear);
+
+  btnClear.addEventListener('click', function () {
+    for (valor of pix) {
+      if (valor.style.backgroundColor !== 'white') {
+        valor.style.backgroundColor = 'white';
+      }
+    }
+  });
+}
+limpaTudo();
+
 window.onload = carregaPagina;
 
 function carregaPagina() {
