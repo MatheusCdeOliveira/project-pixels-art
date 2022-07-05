@@ -35,7 +35,7 @@ pixels.addEventListener('click', function (event) {
 });
 
 function limpaTudo() {
-  const divPai = document.querySelector('#color-palette');
+  const divPai = document.querySelector('#buttonFather');
   const pix = document.querySelectorAll('.pixel');
   const btnClear = document.createElement('button');
   btnClear.innerText = 'Limpar';
@@ -43,7 +43,7 @@ function limpaTudo() {
   divPai.appendChild(btnClear);
 
   btnClear.addEventListener('click', function () {
-    for (valor of pix) {
+    for (let valor of pix) {
       if (valor.style.backgroundColor !== 'white') {
         valor.style.backgroundColor = 'white';
       }
