@@ -9,7 +9,8 @@ function popularQuadro(size) {
 }
 popularQuadro(25);
 
-function selecionarCor() {
+let corAtual;
+function selectColor() {
   let cores = document.getElementById('color-palette');
   const select = document.getElementsByClassName('selected');
   if (select.length <= 1) {
@@ -19,7 +20,22 @@ function selecionarCor() {
     });
   }
 }
-selecionarCor();
+selectColor();
+
+const pixels = document.getElementById('pixel-board');
+const select = document.getElementsByClassName('selected');
+const color = document.querySelector('.one');
+let cor = color.style.backgroundColor;
+pixels.addEventListener('click', function (event) {
+  if (
+    select.length > 0 &&
+    event.target.style.backgroundColor !== select[0].style.backgroundColor
+  ) {
+    event.target.style.backgroundColor = select[0].style.backgroundColor;
+  } else {
+    event.target.style.backgroundColor = 'white';
+  }
+});
 
 window.onload = carregaPagina;
 
